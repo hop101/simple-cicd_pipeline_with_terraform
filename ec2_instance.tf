@@ -11,7 +11,7 @@ resource "aws_instance" "jenkins"{
   instance_type = "t2.micro"
 
   tags{
-    Name = "LinuxServerByTerraform"
+    Name = "LinuxServer"
   } 
 }
 
