@@ -25,12 +25,12 @@ pipeline {
         }
         stage('terraform plan') {
             steps {
-                sh 'terraform plan'
+                sh 'terraform plan --auto-approve'
             }
         }
         stage('terraform apply') {
             steps {
-                sh 'terraform apply'
+                sh 'terraform apply --auto-approve'
             }
         }
 
