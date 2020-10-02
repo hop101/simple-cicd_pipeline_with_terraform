@@ -15,7 +15,7 @@ pipeline {
         stage('git clone') {
             steps {
                 
-                sh 'sudo git clone https://github.com/hop101/simple-cicd_pipeline_with_terraform.git'
+                sh 'git clone https://github.com/hop101/simple-cicd_pipeline_with_terraform.git'
             }
         }
         stage('terraform init') {
