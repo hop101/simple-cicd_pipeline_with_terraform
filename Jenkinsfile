@@ -15,22 +15,22 @@ pipeline {
         stage('git clone') {
             steps {
                 
-                sh 'cd /root/jenkins-terraform; sudo rm -r *;sudo git clone https://github.com/hop101/simple-cicd_pipeline_with_terraform.git'
+                sh 'sudo rm -r *; sudo git clone https://github.com/hop101/simple-cicd_pipeline_with_terraform.git'
             }
         }
         stage('terraform init') {
             steps {
-                sh 'sudo /root/jenkins-terraform/terraform init '
+                sh 'cd simple-cicd_pipeline_with_terraform; sudo terraform init '
             }
         }
         stage('terraform plan') {
             steps {
-                sh 'sudo /root/jenkins-terraform/terraform plan'
+                sh 'sudo terraform plan'
             }
         }
         stage('terraform apply') {
             steps {
-                sh 'sudo /root/jenkins-terraform/terraform plan'
+                sh 'sudo terraform apply'
             }
         }
 
