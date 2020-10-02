@@ -20,17 +20,17 @@ pipeline {
         }
         stage('terraform init') {
             steps {
-                sh 'cd simple-cicd_pipeline_with_terraform; sudo terraform init '
+                sh 'cd simple-cicd_pipeline_with_terraform; terraform init '
             }
         }
         stage('terraform plan') {
             steps {
-                sh 'sudo terraform plan'
+                sh 'terraform plan'
             }
         }
         stage('terraform apply') {
             steps {
-                sh 'sudo terraform apply'
+                sh 'terraform apply'
             }
         }
 
