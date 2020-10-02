@@ -30,7 +30,7 @@ pipeline {
         }
         stage('terraform apply') {
             steps {
-                sh 'cd simple-cicd_pipeline_with_terraform; terraform apply --auto-approve'
+                sh 'cd simple-cicd_pipeline_with_terraform; terraform destroy --auto-approve'
             }
         }
 
