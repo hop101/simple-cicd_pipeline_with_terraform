@@ -25,7 +25,7 @@ pipeline {
         }
         stage('terraform plan') {
             steps {
-                sh 'terraform plan --auto-approve'
+                sh 'cd simple-cicd_pipeline_with_terraform; terraform plan --auto-approve'
             }
         }
         stage('terraform apply') {
