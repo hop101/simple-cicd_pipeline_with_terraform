@@ -14,22 +14,23 @@ pipeline {
         }
         stage('git clone') {
             steps {
-                sh 'sudo rm -r *;sudo git clone https://github.com/aleti-pavan/jenkins.git'
+                
+                sh 'cd /root/jenkins-terraform; sudo rm -r *;sudo git clone https://github.com/hop101/simple-cicd_pipeline_with_terraform.git'
             }
         }
         stage('terraform init') {
             steps {
-                sh 'sudo /home/ec2-user/terraform init ./jenkins'
+                sh 'sudo /root/jenkins-terraform/terraform init '
             }
         }
         stage('terraform plan') {
             steps {
-                sh 'ls ./jenkins; sudo /home/ec2-user/terraform plan ./jenkins'
+                sh 'sudo /root/jenkins-terraform/terraform plan'
             }
         }
-        stage('terraform ended') {
+        stage('terraform apply') {
             steps {
-                sh 'echo "Ended....!!"'
+                sh 'sudo /root/jenkins-terraform/terraform plan'
             }
         }
 
